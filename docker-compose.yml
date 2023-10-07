@@ -5,7 +5,6 @@ services:
     ports:
       - "8000:8000"
     networks:
-      - my_own_network
-  networks:
+      - my_own_network 
+networks:
     my_own_network:
-
