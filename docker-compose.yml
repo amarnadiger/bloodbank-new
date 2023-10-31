@@ -1,7 +1,7 @@
 version: "3"
 services:
   myapp:
-    image: bloodbank:1.0
+    image: bloodbank:1.1
     build: .
     ports:
       - "8000:8000"
