@@ -13,5 +13,6 @@ COPY ./requirements.txt /usr/src/app
 RUN pip install -r requirements.txt
 # copy project
 COPY . /usr/src/app
+EXPOSE 8000
 RUN python manage.py migrate
 CMD ["python", "manage.py", "runserver"]
