@@ -3,8 +3,6 @@ services:
   myapp:
     image: bloodbank:1.2
     build: .
-    ports:
-      - "8000:8000"
     volumes:
       - db-data:/bloodbank/data
 
