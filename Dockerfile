@@ -14,4 +14,4 @@ RUN pip install -r requirements.txt
 # copy project
 COPY . /usr/src/app
 RUN python manage.py migrate
-CMD ["python", "manage.py", "runserver"]
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "bloodbankmanagement.wsgi:application"]
