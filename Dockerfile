@@ -10,9 +10,9 @@ ENV PYTHONUNBUFFERED 1
 # install dependencies
 RUN pip install --upgrade pip 
 COPY ./requirements.txt /usr/src/app
+RUN pip install gunicorn
 RUN pip install -r requirements.txt
 # copy project
 COPY . /usr/src/app
 RUN python manage.py migrate
-RUN pip install gunicorn
 CMD ["gunicorn", "-b", "0.0.0.0:8000", "bloodbankmanagement.wsgi:application"]
