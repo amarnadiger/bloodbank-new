@@ -13,6 +13,6 @@ COPY ./requirements.txt /usr/src/app
 RUN pip install -r requirements.txt
 # copy project
 COPY . /usr/src/app
-RUN python manage.py collectstatic --noinput /
+RUN python manage.py collectstatic --noinput && \
     python manage.py migrate
 CMD ["gunicorn", "-b", "0.0.0.0:8002", "bloodbankmanagement.wsgi:application"]
