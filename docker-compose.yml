@@ -1,7 +1,7 @@
 version: "3"
 services:
   myapp:
-    image: bloodbank:1.4
+    image: bloodbank:1.5
     build: .
     volumes:
       - db-data:/bloodbank/data
