@@ -10,6 +10,7 @@ services:
   nginx:
     image: nginx
     build: .
+      dockerfile: dockerfile
     volumes:
       - static_volumes:/usr/src/app/static_root
 volumes:
