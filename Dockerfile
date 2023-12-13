@@ -11,7 +11,7 @@ ENV PYTHONUNBUFFERED 1
 RUN pip install --upgrade pip 
 COPY ./requirements.txt /usr/src/app
 RUN python -m venv venv
-RUN /bin/bash -c "source venv/bin/activate"
+RUN /bin/ash -c "source venv/bin/activate"
 RUN pip install -r requirements.txt
 # copy project
 COPY . /usr/src/app
