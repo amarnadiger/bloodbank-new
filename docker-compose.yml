@@ -4,8 +4,13 @@ services:
     image: bloodbank:1.5
     build: .
     volumes:
-      - db-data:/bloodbank/data
+      - static_volumes:/usr/src/app/static_root
     ports:
       - "8002:8002"
+  nginx:
+    image: nginx
+    build: .
+    volumes:
+      - static_volumes:/usr/src/app/static_root
 volumes:
-  db-data:
+  static_volumes:
