@@ -14,5 +14,7 @@ services:
       dockerfile: nginx-dockerfile  
     volumes:
       - static_volumes:/usr/src/app/static_root
+    ports:
+      - "8002:80"
 volumes:
   static_volumes:
