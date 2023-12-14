@@ -3,12 +3,13 @@ FROM nginx:latest
 
 # Remove the default Nginx configuration file
 RUN  rm -f /etc/nginx/conf.d/default.conf
-COPY  default.conf /etc/nginx/conf.d/
 # Copy your custom Nginx configuration file to the container
 COPY nginx.conf /etc/nginx/
-
+RUN mkdir /etc/nginx/sites-available 
+COPY blood_app /etc/nginx/sites-available/
+RUN mkdir /etc/nginx/sites-enabled
+RUN sudo ln -s /etc/nginx/sites-available/blood_app /etc/nginx/sites-enabled/
 # Expose port 80 for incoming HTTP requests
 EXPOSE 80
-
 # Start Nginx when the container starts
 CMD ["nginx", "-g", "daemon off;"]
