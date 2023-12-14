@@ -1,7 +1,7 @@
 # /etc/nginx/sites-available/my_django_app
 
 server {
-    listen 80;
+    listen 443;
     server_name 51.20.70.65;
     types{
     text/css css;
