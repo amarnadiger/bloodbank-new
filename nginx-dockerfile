@@ -11,7 +11,7 @@ COPY blood_app /etc/nginx/sites-available/
 #RUN ln -s /etc/nginx/sites-available/blood_app /etc/nginx/sites-enabled/
 
 # Expose port 80 for incoming HTTP requests
-EXPOSE 80
+EXPOSE 443
 
 # Start Nginx when the container starts
 CMD ["nginx", "-g", "daemon off;"]
