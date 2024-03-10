@@ -15,6 +15,6 @@ services:
     volumes:
       - static_volumes:/usr/src/app/static_root
     ports:
-      - "80:80"
+      - "82:82"
 volumes:
   static_volumes:
