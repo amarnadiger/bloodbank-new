@@ -5,13 +5,11 @@ services:
     build: .
     volumes:
       - static-data:/vol/static
-    ports:
-      - "8002:8002"
   nginx:
     image: nginx:latest  # Use the latest Nginx image
     volumes:
       - static-data:/vol/static  # Mount static files directly into Nginx's default HTML directory
     ports:
-      - "82:80"  # Expose Nginx on port 82
+      - "80:80"  # Expose Nginx on port 82
 volumes:
   static-data:
