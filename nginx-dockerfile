@@ -6,5 +6,10 @@ RUN touch /etc/nginx/conf.d/default.conf
 
 COPY ./proxy_params /etc/nginx/
 COPY ./default.conf.tpl /etc/nginx/default.conf 
+# Copy site configuration file
+COPY ./default.conf.tpl /etc/nginx/sites-available/
+
+# Create symbolic link
+RUN ln -s /etc/nginx/sites-available/default.conf.tpl /etc/nginx/sites-enabled/
 
 ENTRYPOINT [ "sh", "-c", "/start.sh" ]
