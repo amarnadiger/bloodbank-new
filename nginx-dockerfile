@@ -1,6 +1,4 @@
 FROM nginx
-
-# Copy start script and make it executable
 COPY ./start.sh /start.sh
 RUN chmod +x /start.sh
 COPY nginx.conf /etc/nginx/nginx.conf
