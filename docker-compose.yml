@@ -7,7 +7,9 @@ services:
       - static-data:/vol/static
   nginx:
     image: nginx:latest  # Use the latest Nginx image
-    build: .
+    build:
+      context: .
+      dockerfile: nginx-dockerfile
     volumes:
       - static-data:/vol/static  # Mount static files directly into Nginx's default HTML directory
     ports:
