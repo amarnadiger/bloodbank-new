@@ -1,15 +1,23 @@
 FROM nginx
+
+# Copy start script and make it executable
 COPY ./start.sh /start.sh
 RUN chmod +x /start.sh
 
-RUN touch /etc/nginx/conf.d/default.conf 
+# Create an empty default.conf file to avoid errors
+RUN touch /etc/nginx/conf.d/default.conf
 
+# Copy proxy_params file
 COPY ./proxy_params /etc/nginx/
-COPY ./default.conf.tpl /etc/nginx/default.conf 
+
+# Copy Nginx configuration template
+COPY ./default.conf.tpl /etc/nginx/default.conf.tpl
+
 # Copy site configuration file
-COPY ./default.conf.tpl /etc/nginx/sites-available/
+COPY ./default.conf.tpl /etc/nginx/sites-available/default.conf
 
 # Create symbolic link
-RUN ln -s /etc/nginx/sites-available/default.conf.tpl /etc/nginx/sites-enabled/
+RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
 
+# Set the entry point to start the start.sh script
 ENTRYPOINT [ "sh", "-c", "/start.sh" ]
