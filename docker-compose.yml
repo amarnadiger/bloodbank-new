@@ -4,7 +4,7 @@ services:
     image: bloodbank:1.5
     build: .
     volumes:
-      - ./static_root:/vol/static
+      - ./static:/vol/static
     ports:
       - "8002:8002"
     
@@ -14,8 +14,6 @@ services:
       context: .
       dockerfile: nginx-dockerfile
     volumes:
-      - ./static_root:/vol/static  # Mount static files directly into Nginx's default HTML directory
+      - ./static:/vol/static  # Mount static files directly into Nginx's default HTML directory
     ports:
       - "83:83"  # Expose Nginx on port 82
-volumes:
-  static-data:
