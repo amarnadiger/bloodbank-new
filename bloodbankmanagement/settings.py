@@ -123,6 +123,9 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATIC_ROOT = "/vol/static/"
+STATICFILES_DIRS=[
+STATIC_DIR,
+ ]
 LOGIN_REDIRECT_URL='/afterlogin'
 
 #for contact us give your gmail id and password
