@@ -19,5 +19,7 @@ COPY ./default.conf.tpl /etc/nginx/sites-available/default.conf
 # Create symbolic link
 RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
 
+RUN nginx -t 
+
 # Set the entry point to start the start.sh script
 ENTRYPOINT [ "sh", "-c", "/start.sh" ]
