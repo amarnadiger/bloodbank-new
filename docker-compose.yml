@@ -16,4 +16,4 @@ services:
     volumes:
       - ./static_root:/vol/static  # Mount static files directly into Nginx's default HTML directory
     ports:
-      - "83:83"  # Expose Nginx on port 82
+      - "84:84"  # Expose Nginx on port 82
