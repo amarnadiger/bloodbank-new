@@ -6,7 +6,7 @@ services:
     volumes:
       - ./static_root:/vol/static
     ports:
-      - "8002:8002"
+      - "8003:8003"
     
   nginx:
     image: nginx:latest  # Use the latest Nginx image
