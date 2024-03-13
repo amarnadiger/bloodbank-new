@@ -126,7 +126,7 @@ STATIC_URL = "static/"
 STATICFILES_DIRS=[
 os.path.join(BASE_DIR, 'static'),
  ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 LOGIN_REDIRECT_URL='/afterlogin'
 
 #for contact us give your gmail id and password
