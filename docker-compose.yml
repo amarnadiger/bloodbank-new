@@ -9,6 +9,8 @@ services:
       - "8003:8003"
     
   nginx:
+    depends_on:
+      - myapp
     image: nginx:latest  # Use the latest Nginx image
     build:
       context: .
